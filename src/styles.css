@@ -4,77 +4,69 @@ html {
 }
 
 body {
-  background: url('./images/stetho4.jpeg') no-repeat;
+  /* background: url('./images/stetho4.jpeg') no-repeat; */
+  background-color: red;
   background-size: cover;
   background-attachment: fixed;
 }
 
-div#display-div {
-  display: none;
+.image-test {
+    background: url('./images/monkey.jpg') no-repeat;  
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
 }
 
-.container {
-  background: #1b2b43;
-  padding: 25px;
-  margin: 100px auto;
-  border-radius: 20px;
+.product-container {
+    margin-top: 200px;
+    -webkit-box-shadow: 6px 7px 15px 3px rgba(0,0,0,0.91); 
+    box-shadow: 6px 7px 15px 3px rgba(0,0,0,0.91);
 }
 
-h1 {
-  text-align: center;
-  font-size: 100px;
-  margin-top: 50px;
-  font-weight: bold;
-  color: ghostwhite;
+.top-row {
+    min-height: 400px;
 }
 
-h5 {
-  text-align: center;
-  font-weight: bold;
-  color: ghostwhite;
+.bottom-row {
+   min-height: 300px;
 }
 
-.input-div {
-  width: 50%;
-  margin: 0 auto;
+.product-right-column {
+    padding-top: 85px;
 }
 
-input#condition-input {
-  min-width: 75%;
-  margin: 50px auto 50px auto;
-  height: 40px;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border: none;
-  outline: none;
-  font-size: 20px;
-  font-weight: bold;
-  padding-left: 15px;
+.product-left-column {
 
 }
 
-button#find-doctor {
-  height: 40px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  padding-right: 10px;
-  background-color: green;
-  color: white;
-  border: none;
-  outline: none;
+.product-title {
+    font-weight: bold;
+    margin-bottom: 40px;
 }
 
-li {
-  list-style: none;
-  border: 1px solid black;
-  background-color: ghostwhite;
-  padding-left: 20px;
-  max-width: 50%;
-  margin: 0 auto;
+.price {
+    font-weight: bold;
+    font-size: 40px;
 }
 
-.doc-name {
-  font-weight: bolder;
-  font-size: 20px;
-  margin-top: 20px;
+h2.product-description {
+    font-weight: bold;
+    margin: 40px 0 8px 0;
+}
+
+h6.sku-number {
+    margin-top: 50px;
+    font-weight: bold;
+    float: right;
+}
+
+.cart-button {
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 8px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #004085;
+    color: ghostwhite;
+    border: 3px solid #004085;
 }

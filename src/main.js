@@ -1,43 +1,31 @@
-import $ from 'jquery';
+//import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { getDoctors, phoneNumberConverter, websiteTextConverter, newPatientConverter } from './scripts';
+// import { } from './scripts';
 
+// Get the modal
+var modal = document.getElementById("myModal");
 
-$(document).ready(function() {
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
-  $('#find-doctor').click(function() {
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
-    let medicalCondition = $("#condition-input").val();
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+};
 
-    getDoctors(medicalCondition)
-      .then((response) => {
-        $("#display-results").empty();
-        const body = JSON.parse(response);
-        const doctors = body.data;
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+};
 
-        if(doctors.length === 0 || medicalCondition === ""){
-          $("#display-results").empty().append("<h5>I'm sorry, no Doctors meet this criteria. Please try other search terms.</h5>");
-        }
-        else {
-          for (let i in doctors){
-
-            const profile = doctors[i].practices[0];
-            const address = profile.visit_address;
-            const phoneNumber = profile.phones[0].number;
-            const website = websiteTextConverter(profile.website);
-            const newPatients = newPatientConverter(profile.accepts_new_patients);
-
-            $("#display-results").append(`<li class="doc-name">${profile.name}</li><n><li>${address.street}, ${address.city}, ${address.state} ${address.zip}</li><n><li>${phoneNumberConverter(phoneNumber)}</li><n><li>${website}</li><li>Accepting new patients: ${newPatients} </li><br>`);
-          }
-        }
-        $("#display-div").show();
-
-      }, function(error) {
-        $("#display-results").empty().append(`<h5>There was an error processing your request: ${error.message}</h5>`);
-        $("#display-div").show();
-      });
-
-  });
-});
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};

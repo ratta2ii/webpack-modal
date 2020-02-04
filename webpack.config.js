@@ -22,8 +22,8 @@ module.exports = {
       title: 'Doctor Lookup',
       template: './src/index.html',
       inject: 'body'
-    }),
-    new Dotenv()
+    })// ,
+    // new Dotenv()
   ],
   module: {
     rules: [
@@ -43,7 +43,7 @@ module.exports = {
         loader: "eslint-loader"
       },
       {
-        test: /\.jpeg$/,
+        test: /\.jpg$/,
         use: 'file-loader'
       }
     ]

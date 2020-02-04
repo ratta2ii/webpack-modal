@@ -1,5 +1,5 @@
 {
-  "name": "doctor-lookup",
+  "name": "modal-webpack",
   "version": "1.0.0",
   "description": "A website to search for local Doctor's based on specific medical issues.",
   "main": "index.js",
